@@ -26,10 +26,21 @@
       return true;
     }
 
-    console.log(validateChoice("scissors"));
-      console.log(validateChoice("hello"));
-
 // pass the choices to the function playRound
+    function playRound(playerSelection, computerSelection) {
+      let result = "";
+      if(playerSelection === computerSelection){
+        result = `It's a tie`;
+      }else if(computerSelection === winningCombinations[playerSelection]){
+        result = `You Lose! ${computerSelection} beats ${playerSelection}`;
+      }else{
+        result = `You Win! ${playerSelection} beats ${computerSelection}`;
+      }
+      return result;
+    }
+
+console.log(playRound("paper","paper"));
+
 // check for wins or ties
 // increment the score of the winnng player
 // return a statement to be logged to the console
@@ -38,9 +49,6 @@
 
 
 
-function playRound(playerSelection, computerSelection) {
-  // your code here!
-}
 
 // const playerSelection = "rock";
 // const computerSelection = computerPlay();
