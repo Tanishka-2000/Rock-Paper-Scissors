@@ -1,8 +1,17 @@
+// make varibles to store winning combinations and choices
+    const choices = ["rock", "paper", "scissors"];
+    const winningCombinations = {
+      rock: "paper",
+      paper: "scissors",
+      scissors: "rock"
+    };
+    let computerScore = 0;
+    let playerScore = 0;
 
 // select a random choice for computer
 // capture the selection of the user
 // validate the selection of the user
-// make varibles to store winning combinations and choices
+
 
 // pass the choices to the function playRound
 // check for wins or ties
@@ -17,6 +26,6 @@ function playRound(playerSelection, computerSelection) {
   // your code here!
 }
 
-const playerSelection = "rock";
-const computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
+// const playerSelection = "rock";
+// const computerSelection = computerPlay();
+// console.log(playRound(playerSelection, computerSelection));
