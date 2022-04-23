@@ -14,8 +14,12 @@
         return choices[num];
     }
 
-    console.log(getComputerChoice());
 // capture the selection of the user
+    function getPlayerSelection(){
+      let userInput = prompt("Enter your choice (rock/paper.scissors).");
+      return userInput.toLowerCase();
+    }
+  console.log(getPlayerSelection());
 // validate the selection of the user
 
 
