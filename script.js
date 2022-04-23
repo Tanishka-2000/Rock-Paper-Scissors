@@ -29,21 +29,27 @@
 // pass the choices to the function playRound
     function playRound(playerSelection, computerSelection) {
       let result = "";
+      // check for wins or ties
       if(playerSelection === computerSelection){
         result = `It's a tie`;
       }else if(computerSelection === winningCombinations[playerSelection]){
         result = `You Lose! ${computerSelection} beats ${playerSelection}`;
+        // increment the score of the winnng player
+        computerScore++;
       }else{
         result = `You Win! ${playerSelection} beats ${computerSelection}`;
+        // increment the score of the winnng player
+        playerScore++;
       }
+      // return a statement to be logged to the console
       return result;
     }
 
-console.log(playRound("paper","paper"));
 
-// check for wins or ties
-// increment the score of the winnng player
-// return a statement to be logged to the console
+
+
+
+
 
 // repeat above procedure 5 times
 
