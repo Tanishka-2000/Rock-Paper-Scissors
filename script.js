@@ -9,6 +9,12 @@
     let playerScore = 0;
 
 // select a random choice for computer
+    function getComputerChoice(){
+        let num = Math.floor(Math.random()*3);
+        return choices[num];
+    }
+
+    console.log(getComputerChoice());
 // capture the selection of the user
 // validate the selection of the user
 
