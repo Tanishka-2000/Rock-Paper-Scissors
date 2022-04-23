@@ -19,9 +19,15 @@
       let userInput = prompt("Enter your choice (rock/paper.scissors).");
       return userInput.toLowerCase();
     }
-  console.log(getPlayerSelection());
-// validate the selection of the user
 
+// validate the selection of the user
+    function validateChoice(choice){
+      if(choices.indexOf(choice) === -1) return false;
+      return true;
+    }
+
+    console.log(validateChoice("scissors"));
+      console.log(validateChoice("hello"));
 
 // pass the choices to the function playRound
 // check for wins or ties
