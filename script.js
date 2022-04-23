@@ -16,7 +16,7 @@
 
 // capture the selection of the user
     function getPlayerSelection(){
-      let userInput = prompt("Enter your choice (rock/paper.scissors).");
+      let userInput = prompt("Enter your choice (rock/paper/scissors).");
       return userInput.toLowerCase();
     }
 
@@ -59,5 +59,7 @@
       console.log(`Final Score:
                         player's score: ${playerScore}
                         computer's score: ${computerScore}`);
-      console.log(playerScore > computerScore ? "You Win!" : "You Win!");
+      console.log(playerScore > computerScore ? "You Win!" : "You Lose!");
     }
+
+    playGame();
