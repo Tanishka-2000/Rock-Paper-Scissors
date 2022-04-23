@@ -45,17 +45,19 @@
       return result;
     }
 
-
-
-
-
-
-
 // repeat above procedure 5 times
-
-
-
-
-// const playerSelection = "rock";
-// const computerSelection = computerPlay();
-// console.log(playRound(playerSelection, computerSelection));
+    function playGame(){
+      for(let i = 0; i < 5; i++){
+        let playerSelection = getPlayerSelection();
+        let computerSelection = getComputerChoice();
+        if(validateChoice(playerSelection)){
+           console.log(playRound(playerSelection, computerSelection));
+        }else {
+          continue;
+        }
+      }
+      console.log(`Final Score:
+                        player's score: ${playerScore}
+                        computer's score: ${computerScore}`);
+      console.log(playerScore > computerScore ? "You Win!" : "You Win!");
+    }
