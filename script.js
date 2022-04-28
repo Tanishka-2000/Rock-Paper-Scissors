@@ -7,6 +7,7 @@
     };
     let computerScore = 0;
     let playerScore = 0;
+    let round = 1
 
 // select a random choice for computer
     function getComputerChoice(){
@@ -17,6 +18,7 @@
 // capture the selection of the user
     function getPlayerSelection(){
       let userInput = prompt("Enter your choice (rock/paper/scissors).");
+      userInput = userInput.trim();
       return userInput.toLowerCase();
     }
 
@@ -34,10 +36,12 @@
         result = `It's a tie`;
       }else if(computerSelection === winningCombinations[playerSelection]){
         result = `You Lose! ${computerSelection} beats ${playerSelection}`;
+        round++;
         // increment the score of the winnng player
         computerScore++;
       }else{
         result = `You Win! ${playerSelection} beats ${computerSelection}`;
+        round++;
         // increment the score of the winnng player
         playerScore++;
       }
@@ -47,13 +51,14 @@
 
 // repeat above procedure 5 times
     function playGame(){
-      for(let i = 0; i < 5; i++){
+      while(round <= 5){
         let playerSelection = getPlayerSelection();
         let computerSelection = getComputerChoice();
         if(validateChoice(playerSelection)){
            console.log(playRound(playerSelection, computerSelection));
         }else {
-          continue;
+            console.log("Wrong input");
+            continue;
         }
       }
       console.log(`Final Score:
