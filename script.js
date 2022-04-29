@@ -18,7 +18,7 @@
 // capture the selection of the user
     function getPlayerSelection(){
       let userInput = prompt("Enter your choice (rock/paper/scissors).");
-      userInput = userInput.trim();
+      // userInput = userInput.trim();
       return userInput.toLowerCase();
     }
 
