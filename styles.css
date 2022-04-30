@@ -1,6 +1,6 @@
 .container{
     position: relative;
-    top: 200px;
+    top: 250px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,17 +11,37 @@ body{
     color: #FD5D5D;
     font-size: 2rem;
 }
+.cover{
+    background-color: #000;
+    /* background-color: #FF8080; */
+    opacity: 0.7;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s;
+    /* display: none; */
+}
 .buttons-container{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .result-container{
-    width: 700px;
+    width: 800px;
     height: 400px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.result-container p{
+    min-width: 350px;
 }
 .btn{
     width: 300px;

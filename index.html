@@ -8,14 +8,20 @@
     <script src="script.js" defer></script>
   </head>
   <body>
+      <div class="cover">
+          <h1></h1>
+          <button type="button" name="button" class="btn btn-outline-secondary">Start Game</button>
+      </div>
     <div class="container">
         <div class="buttons-container">
-            <button type="button" name="button" class="btn btn-outline-success">Rock</button>
-            <button type="button" name="button" class="btn btn-outline-danger">paper</button>
-            <button type="button" name="button" class="btn btn-outline-warning">Scissors</button>
+            <button id="rock" type="button" name="button" class="btn btn-outline-success game">Rock</button>
+            <button id="paper" type="button" name="button" class="btn btn-outline-danger game">paper</button>
+            <button id="scissors" type="button" name="button" class="btn btn-outline-warning game">Scissors</button>
         </div>
         <div class="result-container">
-            <p>The result goes here</p>
+            <p>Your Score: 0</p>
+            <p>Computer Score: 0</p>
+            <p>result</p>
         </div>
     </div>
   </body>

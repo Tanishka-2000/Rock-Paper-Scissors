@@ -7,26 +7,40 @@
     };
     let computerScore = 0;
     let playerScore = 0;
-    let round = 1
+
+    /////////// DOM MANIPULATION //////////////////
+
+    let buttons = document.querySelectorAll(".game");
+    let resultDiv = document.querySelector(".result-container");
+    let paras = resultDiv.querySelectorAll("p");
+    let coverButton = document.querySelector(".cover button");
+
+    coverButton.addEventListener("click",function(e){
+        e.target.parentElement.style.display = "none";
+    });
+
+    buttons.forEach(button => {
+        button.addEventListener("click",playGame);
+    });
 
 // select a random choice for computer
     function getComputerChoice(){
         let num = Math.floor(Math.random()*3);
         return choices[num];
     }
-
-// capture the selection of the user
-    function getPlayerSelection(){
-      let userInput = prompt("Enter your choice (rock/paper/scissors).");
-      // userInput = userInput.trim();
-      return userInput.toLowerCase();
-    }
-
-// validate the selection of the user
-    function validateChoice(choice){
-      if(choices.indexOf(choice) === -1) return false;
-      return true;
-    }
+    
+//  NOT REQUIRED ANYMORE AS INPUT CAPTURED AS BUTTON CLICK NOT TEXT
+// // capture the selection of the user
+//     function getPlayerSelection(){
+//       let userInput = prompt("Enter your choice (rock/paper/scissors).");
+//       return userInput.toLowerCase();
+//     }
+//
+// // validate the selection of the user
+//     function validateChoice(choice){
+//       if(choices.indexOf(choice) === -1) return false;
+//       return true;
+//     }
 
 // pass the choices to the function playRound
     function playRound(playerSelection, computerSelection) {
@@ -36,12 +50,10 @@
         result = `It's a tie`;
       }else if(computerSelection === winningCombinations[playerSelection]){
         result = `You Lose! ${computerSelection} beats ${playerSelection}`;
-        round++;
         // increment the score of the winnng player
         computerScore++;
       }else{
         result = `You Win! ${playerSelection} beats ${computerSelection}`;
-        round++;
         // increment the score of the winnng player
         playerScore++;
       }
@@ -50,21 +62,21 @@
     }
 
 // repeat above procedure 5 times
-    function playGame(){
-      while(round <= 5){
-        let playerSelection = getPlayerSelection();
-        let computerSelection = getComputerChoice();
-        if(validateChoice(playerSelection)){
-           console.log(playRound(playerSelection, computerSelection));
-        }else {
-            console.log("Wrong input");
-            continue;
-        }
-      }
-      console.log(`Final Score:
-                        player's score: ${playerScore}
-                        computer's score: ${computerScore}`);
-      console.log(playerScore > computerScore ? "You Win!" : "You Lose!");
-    }
+    function playGame(e){
 
-    playGame();
+            let playerSelection = e.target.id;
+            let computerSelection = getComputerChoice();
+            let result = playRound(playerSelection, computerSelection)
+
+            paras[0].textContent = `Your Score: ${playerScore}`;
+            paras[1].textContent = `Computer Score: ${computerScore}`;
+            paras[2].textContent = `${result}`;
+
+            if(playerScore === 5 || computerScore ===5){
+                let finalResult = " Match over: ";
+                finalResult += playerScore > computerScore ? "You Win!": "You Lose!";
+                let p = document.createElement("p");
+                p.appendChild(document.createTextNode(`${finalResult}`));
+                resultDiv.appendChild(p);
+            }
+    }
