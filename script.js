@@ -28,7 +28,7 @@
         let num = Math.floor(Math.random()*3);
         return choices[num];
     }
-    
+
 //  NOT REQUIRED ANYMORE AS INPUT CAPTURED AS BUTTON CLICK NOT TEXT
 // // capture the selection of the user
 //     function getPlayerSelection(){
@@ -61,22 +61,26 @@
       return result;
     }
 
-// repeat above procedure 5 times
+// play game whenever the user clicks on any of the button
     function playGame(e){
-
+        //playing the game
             let playerSelection = e.target.id;
             let computerSelection = getComputerChoice();
             let result = playRound(playerSelection, computerSelection)
 
+            // showing the result
             paras[0].textContent = `Your Score: ${playerScore}`;
             paras[1].textContent = `Computer Score: ${computerScore}`;
             paras[2].textContent = `${result}`;
 
+            // checking for final win i.e first to score 5 points
             if(playerScore === 5 || computerScore ===5){
                 let finalResult = " Match over: ";
                 finalResult += playerScore > computerScore ? "You Win!": "You Lose!";
-                let p = document.createElement("p");
-                p.appendChild(document.createTextNode(`${finalResult}`));
-                resultDiv.appendChild(p);
+
+                //showing the result
+                coverButton.previousElementSibling.textContent = `${finalResult}`;
+                coverButton.parentElement.style.display = "block";
             }
+
     }

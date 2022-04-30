@@ -1,6 +1,4 @@
 .container{
-    position: relative;
-    top: 250px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,9 +9,12 @@ body{
     color: #FD5D5D;
     font-size: 2rem;
 }
+img{
+    margin: 50px 50px;
+}
 .cover{
     background-color: #000;
-    /* background-color: #FF8080; */
+    color: #fff;
     opacity: 0.7;
     position: absolute;
     top: 0;
@@ -21,11 +22,9 @@ body{
     left: 0;
     right: 0;
     z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: opacity 1s;
-    /* display: none; */
+    text-align: center;
+    padding-top: 250px;
+
 }
 .buttons-container{
     display: flex;
@@ -34,7 +33,7 @@ body{
 }
 .result-container{
     width: 800px;
-    height: 400px;
+    height: 300px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -42,10 +41,14 @@ body{
 }
 .result-container p{
     min-width: 350px;
+    text-align: center;
 }
 .btn{
     width: 300px;
     height: 80px;
     margin: 50px;
     font-size: 2rem;
+}
+.btn:hover{
+    color:#fff;
 }
