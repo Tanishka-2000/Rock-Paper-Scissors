@@ -15,7 +15,7 @@
     let paras = resultDiv.querySelectorAll("p");
     let coverButton = document.querySelector(".cover button");
 
-    coverButton.addEventListener("click",function(e){
+    coverButton.addEventListener("click", function(e){
         e.target.parentElement.style.display = "none";
     });
 
@@ -77,7 +77,9 @@
             if(playerScore === 5 || computerScore ===5){
                 let finalResult = " Match over: ";
                 finalResult += playerScore > computerScore ? "You Win!": "You Lose!";
-
+                playerScore=0;
+                computerScore=0;
+                
                 //showing the result
                 coverButton.previousElementSibling.textContent = `${finalResult}`;
                 coverButton.parentElement.style.display = "block";
