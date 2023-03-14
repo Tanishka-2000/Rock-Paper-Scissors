@@ -40,8 +40,12 @@ img{
     flex-wrap: wrap;
 }
 .result-container p{
-    min-width: 350px;
+    width: 50%;
     text-align: center;
+}
+
+.result-container p:nth-of-type(3){
+    width: 100%;
 }
 .btn{
     width: 300px;
