@@ -5,6 +5,7 @@ Our childhood game that has settled so many disputes for so long.
 + [General Info](#general-info)
 + [Aim](#aim)
 + [Setup](#setup)
++ [Demo](#demo)
 + [Features](#features)
 
 ## General Info
@@ -24,6 +25,9 @@ cd Rock-Paper-Scissors
 
 ```
 Open index.html file in any browser.
+
+## Demo
+Here is a live working demo [https://tanishka-2000.github.io/Rock-Paper-Scissors/](https://tanishka-2000.github.io/Rock-Paper-Scissors/)
 
 ## Features
 + User friendly interface.
