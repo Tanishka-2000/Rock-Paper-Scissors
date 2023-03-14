@@ -10,7 +10,7 @@ body{
     font-size: 2rem;
 }
 img{
-    margin: 50px 50px;
+    margin: 30px;
 }
 .cover{
     background-color: #000;
@@ -33,7 +33,7 @@ img{
 }
 .result-container{
     width: 800px;
-    height: 300px;
+    height: 250px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
